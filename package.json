@@ -1,0 +1,20 @@
+{
+  "name": "npm-gulp",
+  "version": "0.0.5",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "gulp prod",
+    "start": "gulp dev"
+  },
+  "private": true,
+  "dependencies": {
+    "gulp-cli": "1.4.0",
+    "gulp": "3.9.1",
+    "gulp-sass": "3.1.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-autoprefixer": "4.0.0",
+    "gulp-sourcemaps": "2.6.1"
+  },
+  "devDependencies": {
+  }
+}
