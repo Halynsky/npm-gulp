@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
 const autoprefixer = require('gulp-autoprefixer');
+const rename = require("gulp-rename");
 
 // Main tasks
 
@@ -16,12 +17,23 @@ gulp.task('dev', ['sass', 'compress', 'sass:watch']);
 
 // All tasks
 
+// gulp.task('sass', function () {
+//
+//   gulp.src('css/**/*.scss')
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(gulp.dest('css'));
+//
+// });
+
 gulp.task('sass', function () {
-
-  gulp.src('css/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('css'))
-
+  pump([
+      gulp.src('css/**/*.scss'),
+      sass().on('error', sass.logError),
+      gulp.dest('css')
+    ],
+    function callback() {
+    }
+  );
 });
 
 gulp.task('sass:watch', function () {
@@ -34,6 +46,7 @@ gulp.task('compress', function (cb) {
       uglify(),
       gulp.dest('js')
     ],
-    cb
+    function callback() {
+    }
   );
 });

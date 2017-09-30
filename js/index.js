@@ -1,3 +1,1 @@
-function  myTestFunction() {
-  console.log("this is test")
-}
+function myTestFunction(){console.log("this is test")}
