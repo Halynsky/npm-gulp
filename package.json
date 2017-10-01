@@ -8,15 +8,18 @@
   },
   "private": true,
   "dependencies": {
-    "gulp-cli": "1.4.0",
     "gulp": "3.9.1",
+    "gulp-cli": "1.4.0",
     "gulp-sass": "3.1.0",
     "gulp-uglify": "3.0.0",
     "gulp-autoprefixer": "4.0.0",
     "gulp-sourcemaps": "2.6.1",
     "gulp-rename": "1.2.2",
-    "pump": "1.0.2"
+    "gulp-clean-css": "3.9.0",
+    "pump": "1.0.2",
+    "run-sequence": "2.2.0",
+    "gulp-imagemin": "3.3.0",
+    "gulp-delete-file": "1.0.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
