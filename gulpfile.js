@@ -54,10 +54,10 @@ gulp.task('autoprefixer-css', function (callback) {
 
 gulp.task('minify-css', function (callback) {
   pump([
-      gulp.src(['!src/css/**/*.min.css','src/css/**/*.css']),
+      gulp.src(['!src/css/**/*.min.css','src/css/**/*.css'], { base: "src" }),
       cleanCSS({compatibility: 'ie8'}),
       rename({ suffix: '.min' }),
-      gulp.dest('dist/css')
+      gulp.dest('dist')
     ],
     callback
   );
@@ -77,10 +77,10 @@ gulp.task('compress-js', function (callback) {
   };
 
   pump([
-      gulp.src(['!src/js/**/*.min.js' ,'src/js/**/*.js']),
+      gulp.src(['!src/js/**/*.min.js' ,'src/js/**/*.js'], { base: "src" }),
       uglify(options),
       rename({ suffix: '.min' }),
-      gulp.dest('dist/js')
+      gulp.dest('dist')
     ],
     callback
   );
@@ -89,9 +89,9 @@ gulp.task('compress-js', function (callback) {
 
 gulp.task('compress-images', function (callback) {
   pump([
-      gulp.src(['src/images/**/*']),
+      gulp.src(['src/images/**/*'], { base: "src" }),
       imagemin(),
-      gulp.dest('dist/images')
+      gulp.dest('dist')
     ],
     callback
   );

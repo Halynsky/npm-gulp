@@ -52,6 +52,8 @@ fabric.properties
 
 .idea/
 
+dist/
+
 # compiled css files
 src/css/**/*.css
 dist/css/**/*.css
